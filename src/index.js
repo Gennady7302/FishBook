@@ -24,7 +24,7 @@ ReactDOM.render(
 );
 } 
 
-
+// super test
 rerenderEntireTree(store.getState());
 
 store.subscriber(rerenderEntireTree);
