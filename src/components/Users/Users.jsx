@@ -2,6 +2,37 @@ import React from "react";
 import styles from './users.module.css';
 
 const Users = (props) => {
+
+    if (props.users.length === 0) {
+        props.setUsers([
+            {
+                id: 1,
+                photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOpdZj5ZsyMnSr1VwlpmNgE5jPnc4OhxLlEGSVBFWIes5w6yZ0&usqp=CAU',
+                followed: false,
+                fullName: 'Gennadiy',
+                status: 'I am an owner',
+                location: { city: 'Ulyanovsk', country: 'Russia' }
+            },
+            {
+                id: 2,
+                photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOpdZj5ZsyMnSr1VwlpmNgE5jPnc4OhxLlEGSVBFWIes5w6yZ0&usqp=CAU',
+                followed: true,
+                fullName: 'Gohn',
+                status: 'I am an alcocholic',
+                location: { city: 'Moscow', country: 'Russia' }
+            },
+            {
+                id: 3,
+                photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOpdZj5ZsyMnSr1VwlpmNgE5jPnc4OhxLlEGSVBFWIes5w6yZ0&usqp=CAU',
+                followed: false,
+                fullName: 'Olga',
+                status: 'I am an housewhife',
+                location: { city: 'Ulyanovsk', country: 'Russia' }
+            }
+        ]
+        )
+    }
+
     return <div>
         {
             props.users.map(u => <div key={u.id}>
@@ -27,8 +58,6 @@ const Users = (props) => {
                 </span>
             </div>)
         }
-
-
 
     </div>
 
