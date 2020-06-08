@@ -1,36 +1,16 @@
 import React from "react";
 import styles from './users.module.css';
+import * as axios from "axios";
+import usersPhoto from '../../assets/images/user.jpg'
+
 
 const Users = (props) => {
 
     if (props.users.length === 0) {
-        props.setUsers([
-            {
-                id: 1,
-                photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOpdZj5ZsyMnSr1VwlpmNgE5jPnc4OhxLlEGSVBFWIes5w6yZ0&usqp=CAU',
-                followed: false,
-                fullName: 'Gennadiy',
-                status: 'I am an owner',
-                location: { city: 'Ulyanovsk', country: 'Russia' }
-            },
-            {
-                id: 2,
-                photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOpdZj5ZsyMnSr1VwlpmNgE5jPnc4OhxLlEGSVBFWIes5w6yZ0&usqp=CAU',
-                followed: true,
-                fullName: 'Gohn',
-                status: 'I am an alcocholic',
-                location: { city: 'Moscow', country: 'Russia' }
-            },
-            {
-                id: 3,
-                photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOpdZj5ZsyMnSr1VwlpmNgE5jPnc4OhxLlEGSVBFWIes5w6yZ0&usqp=CAU',
-                followed: false,
-                fullName: 'Olga',
-                status: 'I am an housewhife',
-                location: { city: 'Ulyanovsk', country: 'Russia' }
-            }
-        ]
-        )
+
+        axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+            props.setUsers(response.data.items);
+        })
     }
 
     return <div>
@@ -38,7 +18,7 @@ const Users = (props) => {
             props.users.map(u => <div key={u.id}>
                 <span>
                     <div>
-                        <img src={u.photoUrl} className={styles.usersPhoto}/>
+                        <img src={u.photos.small != null ? u.photos.small : usersPhoto} className={styles.usersPhoto}/>
                     </div>
                     <div>
                         { u.followed 
@@ -48,12 +28,12 @@ const Users = (props) => {
                 </span>
                 <span>
                     <span>
-                        <div>{u.fullName}</div>
+                        <div>{u.name}</div>
                         <div>{u.status}</div>
                     </span>
                     <span>
-            <div>{u.location.country}</div>
-            <div>{u.location.city}</div>
+            <div>{"u.location.country"}</div>
+            <div>{"u.location.city"}</div>
                     </span>
                 </span>
             </div>)
