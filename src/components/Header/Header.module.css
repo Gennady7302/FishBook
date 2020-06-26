@@ -5,11 +5,15 @@
     background-color: green;
   }
   
-  .header img {
+.header img {
     width: 100px;
     padding: 5px;
-    
-    
-    
-  }
+    }
   
+  .loginBlock {
+      float: right;  
+    }  
+    
+  .loginBlock a {  
+      color: white;
+    }  
