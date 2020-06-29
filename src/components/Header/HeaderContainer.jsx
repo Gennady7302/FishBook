@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import * as axios from "axios";
 import { setAuthUserData } from '../../redux/auth-reducer';
+import { connect } from 'react-redux';
 
 
 class HeaderContainer extends React.Component {
@@ -12,9 +13,10 @@ class HeaderContainer extends React.Component {
             withCredentials: true
         })
             .then(response => {
+                
                 if (response.data.resultCode === 0) {
-                    let {Id, email, login} = response.data.data;
-                    this.props.setAuthUserData(Id, email, login);
+                    let {id, email, login} = response.data.data;
+                    this.props.setAuthUserData(id, email, login);
                 }
             });
     }
