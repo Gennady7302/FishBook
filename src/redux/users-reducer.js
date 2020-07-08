@@ -1,3 +1,5 @@
+import { usersAPI } from "../assets/images/api/api";
+
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
@@ -107,7 +109,7 @@ export const follow = (userId) => {
 export const unfollow = (userId) => {
   return (dispatch) => {
     dispatch(toggleFollowingProgress(true, userId));
-    usersAPI.unfollow(userId)
+    usersAPI.unFollow(userId)
       .then(response => {
         if (response.data.resultCode == 0) {
           dispatch(unfollowSuccess(userId));
