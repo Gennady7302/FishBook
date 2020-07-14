@@ -32,7 +32,7 @@ let mapStateToProps = (state) => ({
   profile: state.profilePage.profile  
 });
 
-l
+
 export default compose (
   connect(mapStateToProps, {getUserProfile}),
   withRouter,
