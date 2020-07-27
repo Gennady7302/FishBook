@@ -16,12 +16,13 @@ import { compose } from "redux";
 import {withRouter} from 'react-router-dom';
 import { initializeApp } from './redux/app-reducer';
 import Preloader from './components/common/Preloader/Preloader';
+import { connect } from 'react-redux';
 
 
 
 
 
-class App extends Component {
+class App extends React.Component {
 
   componentDidMount() {        
     this.props.initializeApp();
