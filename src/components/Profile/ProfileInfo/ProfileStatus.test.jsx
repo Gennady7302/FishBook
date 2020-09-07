@@ -39,4 +39,13 @@ describe("ProfileStatus component", () => {
         let input = root.findByType("input");
         expect(input.props.value).toBe("FishBook");
     });
+
+    test("callback should be called", () => {
+        const mockCallback = jest.fn();
+        const component = create(<ProfileStatus status={"FishBook"} updateStatus={mockCallback} /> );
+        const instance = component.getInstance();
+        instance.deactivateEditMode();        
+        expect(mockCallback.mock.calls.length).toBe(1);
+    });
+
 });
