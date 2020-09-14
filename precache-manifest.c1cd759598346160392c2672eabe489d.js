@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "902ff76786609499827fa45e93c43085",
+    "revision": "d96e320c218dc948d848aaf4ff656809",
     "url": "/FishBook/index.html"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/FishBook/static/css/4.c68e3f72.chunk.css"
   },
   {
-    "revision": "fec9f94bb59057a5ae12",
+    "revision": "df0034e35ddc1aa2e595",
     "url": "/FishBook/static/css/main.364e59dd.chunk.css"
   },
   {
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/FishBook/static/js/4.28f1dce5.chunk.js"
   },
   {
-    "revision": "fec9f94bb59057a5ae12",
-    "url": "/FishBook/static/js/main.538706ec.chunk.js"
+    "revision": "df0034e35ddc1aa2e595",
+    "url": "/FishBook/static/js/main.c1bc49e8.chunk.js"
   },
   {
     "revision": "a328708343e83a256412",
