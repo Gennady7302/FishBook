@@ -18,7 +18,8 @@ const LoginForm = ({handleSubmit, error}) => {
             
             {error && <div className={styles.formSummaryError} >
                 {error}
-            </div>}
+            </div>
+            }
             <div>
                 <button>Login</button>
             </div>
